@@ -1,6 +1,6 @@
 {
   "name": "lib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "microservices library",
   "main": "src/index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "firebase-admin": "^8.7.0",
     "get-parameter-names": "^0.3.0",
     "moment": "^2.24.0",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "selenium-webdriver": "^4.0.0-alpha.5",
+    "twit": "^2.2.11"
   },
   "devDependencies": {
     "eslint": "^6.6.0"

@@ -1,6 +1,6 @@
 const {By} = require('selenium-webdriver')
 const {getIdFromUrl} = require('./get-id-from-url')
-const {generic} = require('lib/comments')
+const {generic} = require('../../comments')
 
 const comment = async (browser, articleUrl) => {
   if (articleUrl)

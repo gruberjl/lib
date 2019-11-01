@@ -1,5 +1,5 @@
 const Twit = require('twit')
-const {db} = require('lib')
+const {db} = require('../../db')
 
 const twits = {}
 
