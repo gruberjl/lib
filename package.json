@@ -1,10 +1,11 @@
 {
   "name": "lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "microservices library",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix src/"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,16 @@
     "url": "https://github.com/gruberjl/lib/issues"
   },
   "homepage": "https://github.com/gruberjl/lib#readme",
+  "dependencies": {
+    "await-sleep": "0.0.1",
+    "chromedriver": "^78.0.1",
+    "debug": "^4.1.1",
+    "firebase-admin": "^8.7.0",
+    "get-parameter-names": "^0.3.0",
+    "lib": "github:gruberjl/lib",
+    "moment": "^2.24.0",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
   "devDependencies": {
     "eslint": "^6.6.0"
   }
