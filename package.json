@@ -1,6 +1,6 @@
 {
   "name": "lib",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "microservices library",
   "main": "src/index.js",
   "scripts": {
@@ -23,7 +23,6 @@
     "debug": "^4.1.1",
     "firebase-admin": "^8.7.0",
     "get-parameter-names": "^0.3.0",
-    "lib": "github:gruberjl/lib",
     "moment": "^2.24.0",
     "selenium-webdriver": "^4.0.0-alpha.5"
   },
