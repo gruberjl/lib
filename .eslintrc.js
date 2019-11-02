@@ -6,7 +6,7 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 2017
   },
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
