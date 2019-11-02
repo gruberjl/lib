@@ -36,4 +36,4 @@ for (let i = 0; i < $Buttons.length; i++) {
   }, i*5000)
 }
 
-module.exports = {getArticles}
+module.exports = {tag: {getArticles}}
