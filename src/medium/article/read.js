@@ -1,4 +1,5 @@
 const {By, Key} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
 const isBottomOfPage = async (driver) => {
   return await driver.executeScript('if (document.body.scrollHeight == window.innerHeight + window.scrollY) { return true; } else { return false; }')
@@ -98,7 +99,7 @@ const followAuthor = async (browser) => {
 }
 
 const read = async (browser, url, numOfClaps, doFollowAuthor = true) => {
-  await browser.get(url)
+  await chrome.get(browser, url)
   await readUntilEnd(browser)
   await clap(browser, numOfClaps, numOfClaps)
   if (doFollowAuthor) await followAuthor(browser)

@@ -6,7 +6,7 @@ const login = async (accountId = 'gruberjl-medium') => {
   const account = await db.accounts.get(accountId)
   const browser = await chrome.build()
   await chrome.addCookiesToBrowser(browser, account.cookies)
-  await browser.get('https://medium.com')
+  await chrome.get(browser, 'https://medium.com')
 
   await sleep(120000)
 

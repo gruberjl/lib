@@ -1,8 +1,8 @@
 const {By} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
-const getDetails = async (browser, url, isAlreadyOnUrl = false) => {
-  if (!isAlreadyOnUrl)
-    await browser.get(url)
+const getDetails = async (browser, url) => {
+  await chrome.get(browser, url)
 
   const title = await browser.findElement(By.css('meta[name="title"]')).getAttribute('content').catch(() => undefined) || ''
   const authorTwitter = await browser.findElement(By.css('meta[name="twitter:creator"]')).getAttribute('content').catch(() => undefined) || ''

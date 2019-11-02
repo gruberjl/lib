@@ -1,11 +1,12 @@
 const {By} = require('selenium-webdriver')
 const moment = require('moment')
+const {chrome} = require('../../chrome')
 
 const getArticles = async (browser, publication = 'the-mission', filter='today', excludePremium=false) => {
   const today = moment()
   const yesterday = today.add(-1, 'days')
 
-  await browser.get(`https://medium.com/${publication}/latest`)
+  await chrome.get(browser, `https://medium.com/${publication}/latest`)
   await fetchArticles(browser)
 
   const posts = await getPosts(browser)

@@ -1,10 +1,11 @@
 const {By} = require('selenium-webdriver')
 const {getIdFromUrl} = require('./get-id-from-url')
 const {generic} = require('../../comments')
+const {chrome} = require('../../chrome')
 
 const comment = async (browser, articleUrl) => {
   if (articleUrl)
-    await browser.get(articleUrl)
+    await chrome.get(browser, articleUrl)
 
   const id = await getIdFromUrl(browser)
   console.log(id)

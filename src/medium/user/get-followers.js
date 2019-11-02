@@ -1,9 +1,9 @@
 const {getFollowerUrls} = require('./get-follower-urls')
 const {getDetails} = require('./get-details')
+const {chrome} = require('../../chrome')
 
 const getFollowers = async (browser, userFollowersUrl) => {
-  if (await browser.getCurrentUrl().toString() != userFollowersUrl)
-    await browser.get(userFollowersUrl)
+  await chrome.get(browser, userFollowersUrl)
 
   const followerUrls = await getFollowerUrls(browser)
 

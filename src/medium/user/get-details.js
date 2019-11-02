@@ -1,8 +1,8 @@
 const {By} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
 const getDetails = async (browser, url) => {
-  if (await browser.getCurrentUrl().toString() != url)
-    await browser.get(url)
+  await chrome.get(browser, url)
 
   try {
     const mediumUsername = await getUsername(browser)

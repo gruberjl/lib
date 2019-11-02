@@ -1,7 +1,8 @@
 const {By} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
 const unfollow = async (browser, userUrl) => {
-  await browser.get(userUrl)
+  await chrome.get(browser, userUrl)
   await browser.sleep(2000)
 
   const btns = await browser.findElements(By.css('button')).catch(() => [])

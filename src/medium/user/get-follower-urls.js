@@ -1,8 +1,8 @@
 const {By} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
 const getFollowerUrls = async (browser, userFollowersUrl, maxFollowers=1000) => {
-  if (await browser.getCurrentUrl().toString() != userFollowersUrl)
-    await browser.get(userFollowersUrl)
+  await chrome.get(browser, userFollowersUrl)
 
   let isComplete = false
   let lastExportLength

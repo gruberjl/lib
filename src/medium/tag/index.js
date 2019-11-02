@@ -1,7 +1,8 @@
 const {By} = require('selenium-webdriver')
+const {chrome} = require('../../chrome')
 
 const getArticles = async (browser, tag="productivity") => {
-  await browser.get(`https://medium.com/tag/${tag}/latest`)
+  await chrome.get(browser, `https://medium.com/tag/${tag}/latest`)
   await fetchArticles(browser)
   const urls = await getPostUrls(browser)
   return urls
