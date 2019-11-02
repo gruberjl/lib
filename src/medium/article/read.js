@@ -53,6 +53,8 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
   } catch (e) {
     const url = (await driver.getCurrentUrl()).toString()
     console.log(`Error clapping on ${url}.`)
+    console.log(e)
+    console.log('')
   }
 }
 
