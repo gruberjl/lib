@@ -35,8 +35,7 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
       clapBtn = await driver.executeScript("return arguments[0].parentNode;", svg)
     }
 
-
-    await driver.executeScript("arguments[0].scrollIntoView()", clapBtn)
+    await chrome.scrollIntoView(driver, clapBtn)
     const body = await driver.findElement(By.css('body'))
     await body.sendKeys(Key.ARROW_UP)
     await body.sendKeys(Key.ARROW_UP)
@@ -81,7 +80,7 @@ const followAuthor = async (browser) => {
   const txt = await btn.getText()
   if (txt == 'Follow') {
     try {
-      await browser.executeScript("arguments[0].scrollIntoView()", btn)
+      await chrome.scrollIntoView(browser, btn)
       const body = await browser.findElement(By.css('body'))
       await body.sendKeys(Key.ARROW_UP)
       await body.sendKeys(Key.ARROW_UP)

@@ -20,7 +20,7 @@ const comment = async (browser, articleUrl) => {
 
 const openCommentPanel = async (browser) => {
   const panel = await browser.findElement(By.css('.inlineEditor-placeholder.js-inlineEditorPrompt')).catch(() => undefined)
-  await browser.executeScript("arguments[0].scrollIntoView()", panel)
+  await chrome.scrollIntoView(browser, panel)
   await browser.actions({async: true}).move({origin: panel}).press().release().perform()
 }
 
