@@ -4,7 +4,7 @@
   "description": "microservices library",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine src/**/test/*.js",
     "lint": "eslint --fix src/"
   },
   "repository": {
@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
-    "eslint-plugin-node": "^10.0.0"
+    "eslint-plugin-jasmine": "^2.10.1",
+    "eslint-plugin-node": "^10.0.0",
+    "jasmine": "^3.5.0"
   }
 }

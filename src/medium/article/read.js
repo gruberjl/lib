@@ -36,12 +36,6 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
     }
 
     await chrome.scrollIntoView(driver, clapBtn)
-    const body = await driver.findElement(By.css('body'))
-    await body.sendKeys(Key.ARROW_UP)
-    await body.sendKeys(Key.ARROW_UP)
-    await body.sendKeys(Key.ARROW_UP)
-    await body.sendKeys(Key.ARROW_UP)
-    await body.sendKeys(Key.ARROW_UP)
 
     for (let i = 0; i < times; i++) {
       await driver.sleep(250)
@@ -81,12 +75,7 @@ const followAuthor = async (browser) => {
   if (txt == 'Follow') {
     try {
       await chrome.scrollIntoView(browser, btn)
-      const body = await browser.findElement(By.css('body'))
-      await body.sendKeys(Key.ARROW_UP)
-      await body.sendKeys(Key.ARROW_UP)
-      await body.sendKeys(Key.ARROW_UP)
-      await body.sendKeys(Key.ARROW_UP)
-      await body.sendKeys(Key.ARROW_UP)
+
       await browser.sleep(500)
       await btn.click()
       await browser.sleep(1000)
