@@ -88,7 +88,7 @@ const followAuthor = async (browser) => {
 
 }
 
-const read = async (browser, url, numOfClaps, articleDetails, doFollowAuthor = true) => {
+const read = async (browser, url, articleDetails, numOfClaps=50, doFollowAuthor = true) => {
   await chrome.get(browser, url)
   await readUntilEnd(browser)
   await clap(browser, numOfClaps, numOfClaps)
