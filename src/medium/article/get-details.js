@@ -8,6 +8,7 @@ const getDetails = async (browser, url) => {
   const authorTwitter = await browser.findElement(By.css('meta[name="twitter:creator"]')).getAttribute('content').catch(() => undefined) || ''
   const authorUrl = await browser.findElement(By.css('link[rel="author"]')).getAttribute('href').catch(() => undefined) || ''
   const authorIsMember = Boolean(await browser.findElement(By.css('section .star-15px_svg__svgIcon-use')).catch(() => false))
+  const isFollowingAuthor = Boolean(await browser.findElement(By.xpath("//section//button[text()='Following']")).catch(() => false))
 
   const cleanUrl = await browser.findElement(By.css('meta[property="og:url"]')).getAttribute('content').catch(() => undefined) || ''
   const image = await browser.findElement(By.css('meta[property="og:image"]')).getAttribute('content').catch(() => undefined) || ''
@@ -25,7 +26,7 @@ const getDetails = async (browser, url) => {
     tags.push(await tagEls[i].getText())
   }
 
-  return {title, authorUrl, authorTwitter, authorIsMember, url: cleanUrl, image, tags, language}
+  return {title, authorUrl, authorTwitter, authorIsMember, url: cleanUrl, image, tags, language, isFollowingAuthor}
 }
 
 module.exports = {getDetails}

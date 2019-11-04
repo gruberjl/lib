@@ -88,11 +88,11 @@ const followAuthor = async (browser) => {
 
 }
 
-const read = async (browser, url, numOfClaps, doFollowAuthor = true) => {
+const read = async (browser, url, numOfClaps, articleDetails, doFollowAuthor = true) => {
   await chrome.get(browser, url)
   await readUntilEnd(browser)
   await clap(browser, numOfClaps, numOfClaps)
-  if (doFollowAuthor) await followAuthor(browser)
+  if (doFollowAuthor && !articleDetails.isFollowingAuthor) await followAuthor(browser)
 }
 
 module.exports = {read}
