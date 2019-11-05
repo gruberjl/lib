@@ -28,13 +28,4 @@ const getPostUrls = async (browser) => {
   return urls
 }
 
-const $Buttons = []
-for (let i = 0; i < $Buttons.length; i++) {
-  setTimeout(function () {
-    for (let j = 0; j < 50; j++) {
-      $Buttons[i].click()
-    }
-  }, i*5000)
-}
-
 module.exports = {tag: {getArticles}}
