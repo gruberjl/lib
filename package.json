@@ -19,11 +19,11 @@
   "homepage": "https://github.com/gruberjl/lib#readme",
   "dependencies": {
     "await-sleep": "0.0.1",
-    "chromedriver": "^83.0.0",
+    "chromedriver": "^83.0.1",
     "debug": "^4.1.1",
-    "firebase-admin": "^8.12.1",
+    "firebase-admin": "^8.13.0",
     "get-parameter-names": "^0.3.0",
-    "moment": "^2.26.0",
+    "moment": "^2.27.0",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "twit": "^2.2.11"
   },
@@ -31,6 +31,6 @@
     "eslint": "^6.8.0",
     "eslint-plugin-jasmine": "^2.10.1",
     "eslint-plugin-node": "^10.0.0",
-    "jasmine": "^3.5.0"
+    "jasmine": "^3.6.1"
   }
 }
