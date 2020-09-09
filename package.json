@@ -19,7 +19,7 @@
   "homepage": "https://github.com/gruberjl/lib#readme",
   "dependencies": {
     "await-sleep": "0.0.1",
-    "chromedriver": "^83.0.1",
+    "chromedriver": "^85.0.1",
     "debug": "^4.1.1",
     "firebase-admin": "^8.13.0",
     "get-parameter-names": "^0.3.0",
