@@ -7,11 +7,12 @@ const {people} = require('./people')
 const {bots} = require('./bots')
 const {promotes} = require('./promotes')
 const {activities} = require('./activities')
+const {linkedinEngageBot} = require('./linkedin-engage-bot')
 const {mediumEngageBot} = require('./medium-engage-bot')
 const {mediumMiner} = require('./medium-miner')
 
 module.exports = {
   db: {
-    apps, accounts, posts, twitterAutoFollow, users, people, bots, promotes, activities, mediumEngageBot, mediumMiner
+    apps, accounts, posts, twitterAutoFollow, users, people, bots, promotes, activities, linkedinEngageBot, mediumEngageBot, mediumMiner
   }
 }
