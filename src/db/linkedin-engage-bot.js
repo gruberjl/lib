@@ -2,7 +2,7 @@ const {getCollection, set, get, remove, allDocs} = require('./lib')
 
 const dbName = 'linkedinEngageBot'
 
-const mediumEngageBot = {
+const linkedinEngageBot = {
   getCollection,
   set: set(dbName),
   get: get(dbName),
