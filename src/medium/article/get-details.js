@@ -8,7 +8,7 @@ const getDetails = async (browser, url) => {
   const authorTwitter = await browser.findElement(By.css('meta[name="twitter:creator"]')).getAttribute('content').catch(() => undefined) || ''
   const authorUrl = await browser.findElement(By.css('link[rel="author"]')).getAttribute('href').catch(() => undefined) || ''
   const authorIsMember = Boolean(await browser.findElement(By.css('article a path[clip-rule="evenodd"][fill-rule="evenodd"]')).catch(() => false))
-  const isFollowingAuthor = Boolean(await browser.findElement(By.xpath("//section//button[text()='Following']")).catch(() => false))
+  const isFollowingAuthor = Boolean(await browser.findElement(By.xpath("//button[text()='Following']")).catch(() => false))
 
   const cleanUrl = await browser.findElement(By.css('meta[property="og:url"]')).getAttribute('content').catch(() => undefined) || ''
   const image = await browser.findElement(By.css('meta[property="og:image"]')).getAttribute('content').catch(() => undefined) || ''

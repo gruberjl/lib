@@ -66,6 +66,10 @@ const followAuthor = async (browser) => {
   }
 
   if (!btn) {
+    btn = await browser.findElement(By.xpath("//button[text()='Follow']")).catch(() => undefined)
+  }
+
+  if (!btn) {
     const url = (await browser.getCurrentUrl()).toString()
     console.log(`Error Following on ${url}.`)
     return
