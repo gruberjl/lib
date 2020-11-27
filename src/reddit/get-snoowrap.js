@@ -10,7 +10,7 @@ const getSnoowrap = async (account) => {
     snoowraps[account.id] = new snoowrap({
       userAgent: 'Reddit',
       clientId: doc.key,
-      clientSecret: doc.secret,
+      clientSecret: '',
       refreshToken: account.refreshToken
     })
   }
