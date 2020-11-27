@@ -8,9 +8,9 @@ const getSnoowrap = async (account) => {
     const doc = await db.apps.get('reddit')
 
     snoowraps[account.id] = new snoowrap({
-      userAgent: 'Reddit',
+      userAgent: 'GitBit-App',
       clientId: doc.key,
-      clientSecret: '',
+      clientSecret: doc.secret,
       refreshToken: account.refreshToken
     })
   }
