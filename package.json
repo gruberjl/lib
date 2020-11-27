@@ -25,6 +25,7 @@
     "get-parameter-names": "^0.3.0",
     "moment": "^2.29.1",
     "selenium-webdriver": "^4.0.0-alpha.7",
+    "snoowrap": "^1.21.0",
     "twit": "^2.2.11"
   },
   "devDependencies": {
