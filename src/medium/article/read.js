@@ -31,8 +31,15 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
 
     let clapBtn = await driver.findElement(By.css('.postActions .clapButton')).catch(() => undefined)
     if (!clapBtn) {
-      const svg = await driver.findElement(By.css('svg[width="33"]'))
-      clapBtn = await driver.executeScript("return arguments[0].parentNode;", svg)
+      const svg = await driver.findElement(By.css('svg[width="33"]')).catch(() => undefined)
+      if (svg)
+        clapBtn = await driver.executeScript("return arguments[0].parentNode;", svg)
+    }
+
+    if (!clapBtn) {
+      const svgs = await driver.findElements(By.css('svg[aria-label="clap"]')).catch(() => undefined)
+      if (svgs)
+        clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[2])
     }
 
     await chrome.scrollIntoView(driver, clapBtn)
