@@ -94,8 +94,7 @@ const followAuthor = async (browser) => {
       console.error('Error clicking follow button')
       console.error(e)
       console.error('')
-    }const {By, Key} = require('selenium-webdriver')
-    const {chrome} = require('../../chrome')
+    }
 
     const isBottomOfPage = async (driver) => {
       return await driver.executeScript('if (document.body.scrollHeight == window.innerHeight + window.scrollY) { return true; } else { return false; }')
