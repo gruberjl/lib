@@ -17,7 +17,7 @@ const fetchArticles = async (browser) => {
 
 const getPostUrls = async (browser) => {
   const urls = []
-  const els = await browser.findElements(By.css('.postArticle-readMore a'))
+  const els = await browser.findElements(By.xpath('//a[div[div[div[h2]]]]'))
 
   for (let i=0; i<els.length; i++) {
     const url = await els[i].getAttribute('href').catch(error => ({error}))
