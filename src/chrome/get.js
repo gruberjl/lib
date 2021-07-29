@@ -5,7 +5,7 @@ const get = async (browser, url, ignoreQuery=true, forceRefresh=false) => {
   }
 
   const currentUrl = (await browser.getCurrentUrl().toString()).toLowerCase()
-  if (ignoreQuery && currentUrl.split('?')[0] == url.toLowerCase()) {
+  if (ignoreQuery && currentUrl.toLowerCase().split('?')[0] == url.toLowerCase()) {
     return
   }
 
