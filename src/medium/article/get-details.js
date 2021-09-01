@@ -27,7 +27,7 @@ const getDetails = async (browser, url) => {
     tags.push(await tagEls[i].getText())
   }
 
-  return {title, authorUrl, twitterSite, authorIsMember, url: cleanUrl, image, tags, language, isFollowingAuthor}
+  return {title, description, authorUrl, twitterSite, authorIsMember, url: cleanUrl, image, tags, language, isFollowingAuthor}
 }
 
 module.exports = {getDetails}
