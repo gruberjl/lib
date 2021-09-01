@@ -5,6 +5,7 @@ const getDetails = async (browser, url) => {
   await chrome.get(browser, url)
 
   const title = await browser.findElement(By.css('meta[name="title"]')).getAttribute('content').catch(() => undefined) || ''
+  const description = await browser.findElement(By.css('meta[name="description"]')).getAttribute('content').catch(() => undefined) || ''
   const twitterSite = await browser.findElement(By.css('meta[name="twitter:site"]')).getAttribute('content').catch(() => undefined) || ''
   const authorUrl = await browser.findElement(By.css('link[rel="author"]')).getAttribute('href').catch(() => undefined) || ''
   const authorIsMember = Boolean(await browser.findElement(By.css('article a path[clip-rule="evenodd"][fill-rule="evenodd"]')).catch(() => false))
