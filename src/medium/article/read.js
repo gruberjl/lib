@@ -40,7 +40,7 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
       const svgs = await driver.findElements(By.css('svg[aria-label="clap"]')).catch(() => undefined)
       if (svgs) {
         try {
-          clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[2])
+          clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[1])
         } catch (e) {
           console.log('error clapping on svg')
           console.log(e)
