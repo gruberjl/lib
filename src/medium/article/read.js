@@ -40,7 +40,11 @@ const clap = async (driver, clapMin=10, clapMax=25) => {
       const svgs = await driver.findElements(By.css('svg[aria-label="clap"]')).catch(() => undefined)
       if (svgs) {
         try {
-          clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[1])
+          if (svgs.length > 2) {
+            clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[2])
+          } else {
+            clapBtn = await driver.executeScript("return arguments[0].parentNode;", svgs[1])
+          }
         } catch (e) {
           console.log('error clapping on svg')
           console.log(e)
@@ -216,10 +220,17 @@ const followAuthor = async (browser) => {
 }
 
 const read = async (browser, url, articleDetails, numOfClaps=50, doFollowAuthor = true) => {
-  await chrome.get(browser, url)
-  await readUntilEnd(browser)
-  await clap(browser, numOfClaps, numOfClaps)
-  if (doFollowAuthor && !articleDetails.isFollowingAuthor) await followAuthor(browser)
+  try {
+    await chrome.get(browser, url)
+    await readUntilEnd(browser)
+    await clap(browser, numOfClaps, numOfClaps)
+    if (doFollowAuthor && !articleDetails.isFollowingAuthor) await followAuthor(browser)
+  } catch (e) {
+    console.log(`Error on webpage ${url}`)
+    console.log(e)
+    console.log('')
+  }
+
 }
 
 module.exports = {read}
