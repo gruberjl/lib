@@ -3,11 +3,10 @@ const webdriver = require('selenium-webdriver')
 
 const build = async () => {
   var chromeCapabilities = webdriver.Capabilities.chrome()
-  var chromeOptions = {'args': ['--disable-notifications']}
-  chromeCapabilities.set('chromeOptions', chromeOptions)
+  chromeCapabilities.set('goog:chromeOptions', {'args': ['--disable-notifications']})
 
-  const browser = new webdriver.Builder().forBrowser('chrome').withCapabilities(chromeCapabilities).build()
-  await browser.get('http://gitbit.org')
+  const browser = new webdriver.Builder().withCapabilities(chromeCapabilities).build()
+  await browser.get('https://www.gitbit.org')
 
   return browser
 }
