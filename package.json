@@ -24,7 +24,7 @@
     "firebase-admin": "^10.0.1",
     "get-parameter-names": "^0.3.0",
     "moment": "^2.29.1",
-    "selenium-webdriver": "^4.6.0",
+    "selenium-webdriver": "^4.8.0",
     "snoowrap": "^1.22.0",
     "twit": "^2.2.11"
   },
